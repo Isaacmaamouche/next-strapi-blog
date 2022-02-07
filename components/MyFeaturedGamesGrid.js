@@ -7,7 +7,7 @@ export default function MyFeaturedGamesGrid({ catInfo }) {
   });
 
   const top3 = games.slice(0, 3);
-  console.log(top3);
+  // console.log(top3);
 
   return (
     <div className="container expandableColumn my-5">

@@ -9,7 +9,7 @@ export default function Category({ data }) {
   });
 
   const top3 = games.slice(0, 3);
-  console.log(games);
+  // console.log(games);
 
   return (
     <>

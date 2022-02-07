@@ -4,6 +4,7 @@ import thumbnailUrlBuilder from "../../utilities/thumbnailUrlBuilder";
 
 export default function Game({ data }) {
   const game = data.attributes;
+  // console.log(game);
 
   return (
     <>
@@ -71,7 +72,7 @@ async function getGamesFromStrapi(game_id) {
   let res;
   if (game_id) {
     res = await fetch(
-      `https://fathomless-lake-03373.herokuapp.com/api/games?filters[game_id][$eq]=${game_id}`
+      `https://fathomless-lake-03373.herokuapp.com/api/games?filters[game_id][$eq]=${game_id}&populate=*`
     ).catch((error) => {
       console.error("Error:", error);
     });
