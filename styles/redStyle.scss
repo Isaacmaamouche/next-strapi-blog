@@ -1,7 +1,11 @@
 $gradient-color-1: rgb(139 0 0);
 $gradient-color-2: rgb(255 102 1);
 $transition: all 0.3s ease;
-
+.myAlert {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
 .myGrid {
   display: grid;
   align-items: stretch;

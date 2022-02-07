@@ -3,7 +3,7 @@ import Head from "next/head";
 import Loading from "../../components/Loading";
 import MySquareGridGames from "../../components/MySquareGridGames";
 
-export default function allGames() {
+export default function AllGames() {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
 

@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container, Alert } from "react-bootstrap";
 
 export default function MyNav() {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const Path = useRouter().asPath;
+
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -68,6 +70,17 @@ export default function MyNav() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      {show && (
+        <Alert
+          variant="warning"
+          className="myAlert"
+          dismissible
+          onClose={() => setShow(false)}
+        >
+          This is not finished yet ! I'm still working daily on this project.
+          Come back in a few days !
+        </Alert>
+      )}
     </>
   );
 }

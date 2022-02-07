@@ -17,7 +17,7 @@ export default function MyFeaturedGamesGrid({ catInfo }) {
       <div className="right">
         <h2 className="catBestGames">Les mieux notés</h2>
         {top3.map((game) => (
-          <div className="item">
+          <div key={game.attributes.game_id} className="item">
             <Link
               href={`/games/${game.attributes.game_id}`}
               alt={game.attributes.name}

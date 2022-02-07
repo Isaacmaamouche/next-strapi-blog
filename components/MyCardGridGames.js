@@ -1,4 +1,5 @@
 import { Card, Button } from "react-bootstrap";
+import Link from "next/link";
 
 export default function MyCardGridGames({ data }) {
   const sortedData = data.sort((a, b) => {
