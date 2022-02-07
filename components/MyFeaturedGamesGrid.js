@@ -21,6 +21,7 @@ export default function MyFeaturedGamesGrid({ catInfo }) {
             <Link
               href={`/games/${game.attributes.game_id}`}
               alt={game.attributes.name}
+              passHref
             >
               <div
                 className="bgImg rounded-3"

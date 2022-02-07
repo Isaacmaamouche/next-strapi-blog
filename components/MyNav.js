@@ -37,7 +37,9 @@ export default function MyNav() {
             <Nav className="ms-auto">
               <Nav.Item key="accueil">
                 <span className={Path == "/" ? "nav-link active" : "nav-link"}>
-                  <Link href={`/`}>Acceuil</Link>
+                  <Link passHref href={`/`}>
+                    Acceuil
+                  </Link>
                 </span>
               </Nav.Item>
 
@@ -52,7 +54,10 @@ export default function MyNav() {
                           : "nav-link"
                       }
                     >
-                      <Link href={`/categories/${category.attributes.cat_id}`}>
+                      <Link
+                        passHref
+                        href={`/categories/${category.attributes.cat_id}`}
+                      >
                         {category.attributes.name}
                       </Link>
                     </span>
@@ -77,8 +82,8 @@ export default function MyNav() {
           dismissible
           onClose={() => setShow(false)}
         >
-          This is not finished yet ! I'm still working daily on this project.
-          Come back in a few days !
+          {` This is not finished yet ! I'm still working daily on this project.
+          Come back in a few days !`}
         </Alert>
       )}
     </>

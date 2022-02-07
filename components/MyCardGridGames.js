@@ -25,6 +25,7 @@ export default function MyCardGridGames({ data }) {
                 <Link
                   href={"/games/" + game.attributes.game_id}
                   className="d-block btn-red-outline"
+                  passHref
                 >
                   Décrouvrir {game.attributes.name}
                 </Link>
