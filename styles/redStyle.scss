@@ -1,0 +1,316 @@
+$gradient-color-1: rgb(139 0 0);
+$gradient-color-2: rgb(255 102 1);
+$transition: all 0.3s ease;
+
+.myGrid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 5rem;
+  max-width: min(90%, 1500px);
+  margin: auto;
+}
+
+.cardBodyJustifyEnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.blockImg {
+  display: block;
+  width: 100%;
+}
+
+.kratos {
+  filter: drop-shadow(5px 0px 5px darken($gradient-color-1, 10));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  background: -webkit-linear-gradient(
+    40deg,
+    $gradient-color-1,
+    $gradient-color-2
+  );
+  background-size: auto 200%;
+  background-position: 0 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: transparent;
+  transition: $transition;
+}
+h1:hover {
+  background-position: 0 0;
+}
+
+.btn-red {
+  text-align: left;
+  background: -webkit-linear-gradient(
+    40deg,
+    $gradient-color-1,
+    $gradient-color-2
+  );
+  background-size: auto 200%;
+  background-position: 0 100%;
+  transition: $transition;
+  &:hover {
+    background-position: 0 0;
+  }
+  border: none;
+  transition: $transition;
+}
+
+.btn-red-outline {
+  @extend .btn-red;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: transparent;
+  border: 1px solid $gradient-color-1;
+
+  &:hover {
+    background-position: 0 0;
+    border-color: $gradient-color-2;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.nav-link {
+  a {
+    color: $gradient-color-1;
+    opacity: 0.55;
+    text-decoration: none;
+    transition: $transition;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .active a {
+    opacity: 1;
+  }
+}
+.nav-link.active a {
+  opacity: 1;
+}
+
+p {
+  color: $gradient-color-1;
+}
+
+.fade-in {
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hoverBody {
+  & p,
+  & .h5 {
+    color: white !important;
+  }
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: $transition;
+}
+
+.hoverShadow {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(90deg, black, transparent);
+    transition: $transition;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+  }
+}
+
+.card {
+  overflow: hidden;
+  &:hover {
+    .hoverBody {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    .hoverShadow::after {
+      top: 0%;
+    }
+  }
+}
+
+@media (hover: none) {
+  .card {
+    overflow: hidden;
+    .hoverBody {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    .hoverShadow::after {
+      top: 0%;
+    }
+  }
+}
+
+.expandableColumn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  .left {
+    display: flex;
+    min-height: 20rem;
+    h1 {
+      margin: auto;
+      padding: 0 1rem;
+    }
+  }
+  .right {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    gap: 1rem;
+    .catBestGames {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+    .item {
+      cursor: pointer;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+      transition: $transition;
+      .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: $transition;
+        padding-left: 0.5rem;
+        z-index: 10;
+      }
+      &:hover {
+        flex: 2;
+        .info {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+        .bgImg::after {
+          left: -50%;
+          opacity: 1;
+        }
+      }
+      .bgImg {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 200px;
+        &::after {
+          content: "";
+          width: 200%;
+          height: 100%;
+          background: -webkit-linear-gradient(45deg, white, transparent);
+          background-size: 150% 100%;
+          transition: $transition;
+          position: absolute;
+          top: 0;
+          left: -100%;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .expandableColumn {
+    flex-direction: column;
+
+    .item {
+      display: flex;
+      justify-content: center;
+    }
+    .left {
+      display: flex;
+      min-height: 10rem !important;
+    }
+    .right {
+      flex-direction: column;
+    }
+    .bgImg {
+      width: 100vw !important;
+    }
+  }
+}
+@media (hover: none) {
+  .item {
+    .info {
+      opacity: 1 !important;
+      transform: translateX(0%) !important;
+    }
+
+    ::after {
+      left: -50% !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
+.gamePage {
+  display: flex;
+  gap: 2rem;
+
+  .left {
+    flex: 1;
+    margin: auto;
+    max-width: 350px;
+  }
+  .right {
+    flex: 3;
+  }
+  .score {
+    height: 2rem;
+    font-size: 1.5rem;
+    .progress-bar {
+      background: -webkit-linear-gradient(
+        40deg,
+        $gradient-color-1,
+        $gradient-color-2
+      );
+    }
+    border: 1px solid $gradient-color-1;
+  }
+}
