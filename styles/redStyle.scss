@@ -5,6 +5,7 @@ $transition: all 0.3s ease;
   position: fixed;
   bottom: 0;
   right: 0;
+  z-index: 99;
 }
 .myGrid {
   display: grid;

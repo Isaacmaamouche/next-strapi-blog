@@ -3,7 +3,6 @@ import Link from "next/link";
 import thumbnailUrlBuilder from "../utilities/thumbnailUrlBuilder";
 
 export default function MySquareGridGames({ data }) {
-  console.log(data);
   const sortedData = data.sort((a, b) => {
     let fa = a.attributes.name.toLowerCase();
     let fb = b.attributes.name.toLowerCase();
