@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Loading from "../../components/Loading";
 import MySquareGridGames from "../../components/MySquareGridGames";
+import { strapiContext } from "../../utilities/Context";
 
 export default function AllGames({ data }) {
   // const [data, setData] = useState([]);
@@ -19,6 +20,7 @@ export default function AllGames({ data }) {
   //       console.error("Error:", error);
   //     });
   // }, []);
+  console.log(strapiContext());
 
   return (
     <>

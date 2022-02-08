@@ -1,14 +1,17 @@
 import { Button } from "react-bootstrap";
+import Image from "next/image";
 
 export default function MyHero() {
   return (
     <div className="container my-5 fade-in">
       <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3">
         <div className="col-lg-4 d-block d-lg-none px-md-5">
-          <img
+          <Image
             className="rounded-3 blockImg kratos"
             src="/assets/img/kratos.png"
             alt="hero banner image"
+            width={500}
+            height={500}
           />
         </div>
 
@@ -23,7 +26,7 @@ export default function MyHero() {
 
           <Button
             className="btn-red btn-lg px-4 fw-bold me-2 mb-2"
-            href="/"
+            href="https://github.com/Isaacmaamouche/next-strapi-blog"
             target="_blank"
             rel="noreferrer"
           >
@@ -40,10 +43,12 @@ export default function MyHero() {
         </div>
 
         <div className="col-lg-5 d-none d-lg-block">
-          <img
+          <Image
             className="rounded-3 blockImg kratos"
             src="/assets/img/kratos.png"
             alt="hero banner image"
+            width={500}
+            height={500}
           />
         </div>
       </div>

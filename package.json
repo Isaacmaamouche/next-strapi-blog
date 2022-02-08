@@ -14,7 +14,13 @@
     "react": "17.0.2",
     "react-bootstrap": "^2.1.2",
     "react-dom": "17.0.2",
-    "sass": "^1.49.7"
+    "react-markdown": "^8.0.0",
+    "rehype-stringify": "^9.0.3",
+    "remark-parse": "^10.0.1",
+    "remark-react": "^9.0.1",
+    "remark-rehype": "^10.1.0",
+    "sass": "^1.49.7",
+    "unified": "^10.1.1"
   },
   "devDependencies": {
     "eslint": "8.7.0",

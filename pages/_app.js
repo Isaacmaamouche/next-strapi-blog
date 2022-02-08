@@ -5,6 +5,8 @@ import "../styles/redStyle.scss";
 import MyNav from "../components/MyNav";
 import Head from "next/head";
 
+import Context from "../utilities/Context";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -19,8 +21,10 @@ function MyApp({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <MyNav />
-      <Component {...pageProps} />
+      <Context>
+        <MyNav />
+        <Component {...pageProps} />
+      </Context>
     </>
   );
 }

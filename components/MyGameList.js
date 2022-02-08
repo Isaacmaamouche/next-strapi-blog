@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function MyGameList(props) {
   const { heroTitle, heroText, redButton, redButtonOutline, score, img } =
@@ -8,10 +9,12 @@ export default function MyGameList(props) {
     <div className="container fade-in shadow-sm my-5">
       <div className="row p-lg-4 align-items-center rounded-3">
         <div className="col-lg-4 d-block d-lg-none px-md-5">
-          <img
+          <Image
             className="rounded-3 blockImg px-5"
             src={img}
             alt="hero banner image"
+            width={500}
+            height={500}
           />
         </div>
 
@@ -42,10 +45,12 @@ export default function MyGameList(props) {
         </div>
 
         <div className="col-lg-5 d-none d-lg-block p-5">
-          <img
+          <Image
             className="rounded-3 blockImg"
             src={img}
             alt="hero banner image"
+            width={500}
+            height={500}
           />
         </div>
       </div>

@@ -25,16 +25,15 @@ export default function MyFeaturedGamesGrid({ catInfo }) {
             >
               <div
                 className="bgImg rounded-3"
-                style={
-                  {
-                    // backgroundImage:
-                    //   `url('` +
-                    //   thumbnailUrlBuilder(
-                    //     game.attributes.thumbnail.data.attributes.formats
-                    //   ) +
-                    //   `')`,
-                  }
-                }
+                style={{
+                  backgroundImage: 'url("https://via.placeholder.com/100x100")',
+                  // backgroundImage:
+                  //   `url('` +
+                  //   thumbnailUrlBuilder(
+                  //     game.attributes.thumbnail.data.attributes.formats
+                  //   ) +
+                  //   `')`,
+                }}
               >
                 <div className="info">
                   <h2>{game.attributes.name}</h2>

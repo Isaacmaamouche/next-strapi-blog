@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { Card, Button, ProgressBar } from "react-bootstrap";
 import thumbnailUrlBuilder from "../../utilities/thumbnailUrlBuilder";
 
@@ -14,10 +15,12 @@ export default function Game({ data }) {
 
       <div className="container gamePage my-5">
         <div className="left d-none d-md-block">
-          <img
+          <Image
             className="blockImg mb-2"
             src={thumbnailUrlBuilder(game.thumbnail.data.attributes.formats)}
             alt={game.name}
+            width={500}
+            height={500}
           />
           <ProgressBar
             className="score"
@@ -33,7 +36,9 @@ export default function Game({ data }) {
 
           <Button
             className="btn-red"
-            href={`/games/${game.game_id}`}
+            href={`${game.jvc_link}`}
+            target="_blank"
+            rel="noreferrer"
             alt={game.name}
           >
             Lire le text sur JVC.com
@@ -41,10 +46,12 @@ export default function Game({ data }) {
         </div>
 
         <div className="smallScreen d-md-none">
-          <img
+          <Image
             className="blockImg mb-2"
             src={thumbnailUrlBuilder(game.thumbnail.data.attributes.formats)}
             alt={game.name}
+            width={500}
+            height={500}
           />
           <h1>{game.name}</h1>
           <ProgressBar
@@ -57,7 +64,9 @@ export default function Game({ data }) {
           <p>{game.description}</p>
           <Button
             className="btn-red"
-            href={`/games/${game.game_id}`}
+            href={`${game.jvc_link}`}
+            target="_blank"
+            rel="noreferrer"
             alt={game.name}
           >
             Lire le text sur JVC.com
