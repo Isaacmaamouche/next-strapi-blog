@@ -1,30 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Nav, Navbar, Container, Alert } from "react-bootstrap";
+// import { strapiContext } from "../utilities/Context";
+// Context disabled to lower api call from client side
 
 export default function MyNav() {
-  const [data, setData] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  // const { categories } = strapiContext().value;
+
+  // Pour ajouter la class active au menu
   const Path = useRouter().asPath;
 
+  //Pour l'alert en bas de l'écran
   const [show, setShow] = useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    fetch("https://fathomless-lake-03373.herokuapp.com/api/categories")
-      .then((res) => res.json())
-      .then((categories) => {
-        setData(categories.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, []);
-
-  if (isLoading) return null;
-  if (!data) return null;
   return (
     <>
       <Navbar bg="light" sticky="top" expand="lg">
@@ -43,9 +32,8 @@ export default function MyNav() {
                 </span>
               </Nav.Item>
 
-              {data &&
-                !isLoading &&
-                data.map((category) => (
+              {/* {categories &&
+                categories.data.map((category) => (
                   <Nav.Item key={category.id}>
                     <span
                       className={
@@ -62,13 +50,22 @@ export default function MyNav() {
                       </Link>
                     </span>
                   </Nav.Item>
-                ))}
+                ))} */}
 
               <Nav.Item key="all_games">
                 <span
                   className={Path == "/games" ? "nav-link active" : "nav-link"}
                 >
                   <Link href={`/games`}>Tous les jeux</Link>
+                </span>
+              </Nav.Item>
+              <Nav.Item key="all_categories">
+                <span
+                  className={
+                    Path == "/categories" ? "nav-link active" : "nav-link"
+                  }
+                >
+                  <Link href={`/categories`}>Toutes les catégories</Link>
                 </span>
               </Nav.Item>
             </Nav>

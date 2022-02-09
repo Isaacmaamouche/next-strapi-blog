@@ -5,7 +5,6 @@ import thumbnailUrlBuilder from "../../utilities/thumbnailUrlBuilder";
 
 export default function Game({ data }) {
   const game = data.attributes;
-  // console.log(game);
 
   return (
     <>
@@ -16,7 +15,7 @@ export default function Game({ data }) {
       <div className="container gamePage my-5">
         <div className="left d-none d-md-block">
           <Image
-            className="blockImg mb-2"
+            className="blockImg mb-2 scaleHover"
             src={thumbnailUrlBuilder(game.thumbnail.data.attributes.formats)}
             alt={game.name}
             width={500}
@@ -28,7 +27,7 @@ export default function Game({ data }) {
             label={game.score + "/20"}
             max={20}
           />
-          <h3>Sortie le : {game.date}</h3>
+          <h5>Sortie le : {game.date}</h5>
         </div>
         <div className="right d-none d-md-block">
           <h1>{game.name}</h1>
@@ -60,7 +59,7 @@ export default function Game({ data }) {
             label={game.score + "/20"}
             max={20}
           />
-          <h3>Sortie le : {game.date}</h3>
+          <h5>Sortie le : {game.date}</h5>
           <p>{game.description}</p>
           <Button
             className="btn-red"

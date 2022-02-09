@@ -24,7 +24,7 @@ export default function MySquareGridGames({ data }) {
 
   return (
     <>
-      <div className="myGrid my-5">
+      <div className="myGrid my-5 fade-in">
         {data &&
           sortedData.map((game) => (
             <>

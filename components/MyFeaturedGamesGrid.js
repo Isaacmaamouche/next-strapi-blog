@@ -1,18 +1,10 @@
 import Link from "next/link";
 import thumbnailUrlBuilder from "../utilities/thumbnailUrlBuilder";
-export default function MyFeaturedGamesGrid({ catInfo }) {
-  const category = catInfo.attributes;
-  const games = category.games.data.sort((a, b) => {
-    return b.attributes.score - a.attributes.score;
-  });
-
-  const top3 = games.slice(0, 3);
-  // console.log(top3);
-
+export default function MyFeaturedGamesGrid({ catName, top3, gamesData }) {
   return (
     <div className="container expandableColumn my-5">
       <div className="left">
-        <h1>{category.name}</h1>
+        <h1>{catName}</h1>
       </div>
       <div className="right">
         <h2 className="catBestGames">Les mieux notés</h2>
@@ -26,13 +18,12 @@ export default function MyFeaturedGamesGrid({ catInfo }) {
               <div
                 className="bgImg rounded-3"
                 style={{
-                  backgroundImage: 'url("https://via.placeholder.com/100x100")',
-                  // backgroundImage:
-                  //   `url('` +
-                  //   thumbnailUrlBuilder(
-                  //     game.attributes.thumbnail.data.attributes.formats
-                  //   ) +
-                  //   `')`,
+                  backgroundImage:
+                    `url('` +
+                    thumbnailUrlBuilder(
+                      game.attributes.thumbnail.data.attributes.formats
+                    ) +
+                    `')`,
                 }}
               >
                 <div className="info">

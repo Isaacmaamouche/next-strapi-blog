@@ -6,6 +6,7 @@ import MyNav from "../components/MyNav";
 import Head from "next/head";
 
 import Context from "../utilities/Context";
+// Context disabled to lower api call from client side
 
 function MyApp({ Component, pageProps }) {
   return (

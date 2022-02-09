@@ -8,9 +8,9 @@ export default function MyGameList(props) {
   return (
     <div className="container fade-in shadow-sm my-5">
       <div className="row p-lg-4 align-items-center rounded-3">
-        <div className="col-lg-4 d-block d-lg-none px-md-5">
+        <div className="col-lg-4 d-block d-lg-none px-md-5 text-center">
           <Image
-            className="rounded-3 blockImg px-5"
+            className="rounded-3 blockImg scaleHover"
             src={img}
             alt="hero banner image"
             width={500}
@@ -46,7 +46,7 @@ export default function MyGameList(props) {
 
         <div className="col-lg-5 d-none d-lg-block p-5">
           <Image
-            className="rounded-3 blockImg"
+            className="rounded-3 blockImg scaleHover"
             src={img}
             alt="hero banner image"
             width={500}

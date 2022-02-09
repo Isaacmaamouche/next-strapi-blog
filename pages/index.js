@@ -23,12 +23,6 @@ export default function Games() {
       });
   }, []);
 
-  //https://strapi.io/blog/postgre-sql-and-strapi-setup
-  //https://github.com/vercel/next.js/tree/canary/examples/cms-strapi
-  //https://github.com/strapi/strapi-starter-next-corporate
-  //https://nextjs.org/examples
-
-  //https://fathomless-lake-03373.herokuapp.com/api/games
   return (
     <div className="mb-5 pb-5 fade-in">
       <MyHero />

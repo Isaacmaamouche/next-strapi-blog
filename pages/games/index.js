@@ -1,38 +1,21 @@
-import { useState, useEffect } from "react";
 import Head from "next/head";
-import Loading from "../../components/Loading";
 import MySquareGridGames from "../../components/MySquareGridGames";
-import { strapiContext } from "../../utilities/Context";
 
 export default function AllGames({ data }) {
-  // const [data, setData] = useState([]);
-  // const [isLoading, setLoading] = useState(false);
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   fetch("https://fathomless-lake-03373.herokuapp.com/api/games?populate=*")
-  //     .then((res) => res.json())
-  //     .then((games) => {
-  //       setData(games.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //     });
-  // }, []);
-  console.log(strapiContext());
-
   return (
     <>
       <Head>
         <title>Tous les jeux</title>
       </Head>
+
       {data && (
         <>
-          <div className="text-center mb-4">
-            <h1 className="display-4 fw-bold lh-1 p-4">Tous les jeux</h1>
+          <div className="fade-in">
+            <div className="text-center mb-4">
+              <h1 className="display-4 fw-bold lh-1 p-4">Tous les jeux</h1>
+            </div>
+            <MySquareGridGames data={data} />
           </div>
-          <MySquareGridGames data={data} />
         </>
       )}
     </>
@@ -46,6 +29,7 @@ export async function getStaticProps() {
     console.error("Error:", error);
   });
   const { data } = await res.json();
+
   return {
     props: {
       data: data,
