@@ -12,6 +12,7 @@ export default function MyHero() {
             alt="hero banner image"
             width={500}
             height={500}
+            priority
           />
         </div>
 
@@ -49,6 +50,7 @@ export default function MyHero() {
             alt="hero banner image"
             width={500}
             height={500}
+            priority
           />
         </div>
       </div>

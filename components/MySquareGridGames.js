@@ -46,7 +46,7 @@ export default function MySquareGridGames({ data }) {
                       {shortenDesc(game.attributes.description)}
                     </Card.Text>
                   </div>
-                  <Link href={"/games/" + game.attributes.game_id}>
+                  <Link passHref href={"/games/" + game.attributes.game_id}>
                     <Button className="btn-red">
                       Décrouvrir {game.attributes.name}
                     </Button>

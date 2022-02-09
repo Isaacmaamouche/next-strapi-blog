@@ -28,7 +28,7 @@ export default function MyGameList(props) {
           </p>
 
           {redButton && (
-            <Link href={redButton} target="_blank" rel="noreferrer">
+            <Link passHref href={redButton} target="_blank" rel="noreferrer">
               <Button className="fw-bold btn-lg mb-2 btn-red">
                 Découvrir {heroTitle}
               </Button>
@@ -36,7 +36,12 @@ export default function MyGameList(props) {
           )}
 
           {redButtonOutline && (
-            <Link href={redButtonOutline.link} target="_blank" rel="noreferrer">
+            <Link
+              passHref
+              href={redButtonOutline.link}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button className="fw-bold btn-lg mb-2 btn-red-outline">
                 {redButtonOutline.text}
               </Button>

@@ -16,7 +16,7 @@ export default function AllCategories({ data }) {
             </div>
 
             {data.map((category) => (
-              <div className=" mb-5">
+              <div className=" mb-5" key={category.attributes.cat_id}>
                 <h1 className="lh-1">
                   <Link
                     passHref
