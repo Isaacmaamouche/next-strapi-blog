@@ -11,9 +11,6 @@ export default function MyNav() {
   // Pour ajouter la class active au menu
   const Path = useRouter().asPath;
 
-  //Pour l'alert en bas de l'écran
-  const [show, setShow] = useState(true);
-
   return (
     <>
       <Navbar bg="light" sticky="top" expand="lg">
@@ -72,17 +69,6 @@ export default function MyNav() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {show && (
-        <Alert
-          variant="warning"
-          className="myAlert"
-          dismissible
-          onClose={() => setShow(false)}
-        >
-          {` This is not finished yet ! I'm still working daily on this project.
-          Come back in a few days !`}
-        </Alert>
-      )}
     </>
   );
 }
