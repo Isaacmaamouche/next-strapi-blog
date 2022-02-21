@@ -65,6 +65,13 @@ export default function MyNav() {
                   <Link href={`/categories`}>Toutes les catégories</Link>
                 </span>
               </Nav.Item>
+              <Nav.Item key="actu">
+                <span
+                  className={Path == "/actu" ? "nav-link active" : "nav-link"}
+                >
+                  <Link href={`/actu`}>Les derniers tests</Link>
+                </span>
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>

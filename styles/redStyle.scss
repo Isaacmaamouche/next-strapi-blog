@@ -356,3 +356,30 @@ p {
     color: $gradient-color-1;
   }
 }
+
+.newsSection {
+  background-color: white;
+  padding: 2rem;
+
+  width: clamp(400px, 90vw, 1400px);
+  margin: auto;
+  .newsGrid {
+    .newsCard a {
+      display: grid;
+      // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: 1fr 2fr;
+      @media (max-width: 768px) {
+        grid-template-columns: 2fr;
+      }
+
+      padding: 1rem;
+      gap: 1rem;
+      justify-items: center;
+      align-items: center;
+
+      h2 {
+        font-size: clamp(1rem, 2vw, 2rem);
+      }
+    }
+  }
+}
