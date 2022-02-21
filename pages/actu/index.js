@@ -8,6 +8,7 @@ export default function RSS({ data }) {
   const setIncrement = 5;
   const [setNumber, setSetNumber] = useState(setIncrement);
   const [news, setNews] = useState(data.items.slice(0, setNumber));
+  const stillNews = setNumber >= data.items.length;
 
   function loadMore() {
     const moreNews = data.items.slice(setNumber, setNumber + setIncrement);
@@ -25,7 +26,11 @@ export default function RSS({ data }) {
           ))}
         </div>
         <div className="d-flex">
-          <Button className="btn-red mx-auto" onClick={loadMore}>
+          <Button
+            disabled={stillNews}
+            className="btn-red mx-auto"
+            onClick={loadMore}
+          >
             Voir plus de tests
           </Button>
         </div>
